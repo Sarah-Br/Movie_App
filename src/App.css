@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-repeat: repeat;
+  background-image: url(https://backgroundcheckall.com/wp-content/uploads/2018/10/neon-background-hd-5.jpg);
 }
 
 .App-logo {
@@ -12,27 +14,40 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
 }
-
-.App-link {
-  color: #61dafb;
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+img:hover {
+  box-shadow: 10px 8px 25px rgb(206, 205, 205);
+}
+img {
+  transition: box-shadow 0.2s ease-in-out;
 }
